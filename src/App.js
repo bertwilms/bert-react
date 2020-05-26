@@ -1,17 +1,37 @@
 import React from 'react';
-import HelloButton from './hello-button';
-//import logo from './logo.svg';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import AboutPage from './componenten/pages/AboutPage';
+import Homepage from './componenten/pages/Homepage';
+import CharacterPage from './componenten/pages/CharacterPage';
+import TheMovieDb from './componenten/pages/TheMovieDbPage';
 import './App.css';
 
-
 function App() {
-  return (
-    <div className="App">
-     <h1>Hallo React </h1>
-      <p>Dit is mijn allereerste React Applicatie.</p>
-        <HelloButton name={"Bert Wilms"}/>
-    </div>
+    return (
+        <React.Fragment>
+              <Router>
+                <Switch>
+                    <Route path="/theMovieDbPage">
+                        <TheMovieDb />
+                    </Route>
+                    <Route path="/about">
+                        <AboutPage />
+                    </Route>
+                    <Route path="/character/:id">
+                        <CharacterPage />
+                    </Route>
+                    <Route path="/">
+                        <Homepage />
+                    </Route>
+                </Switch>
+            </Router>
+        </React.Fragment>
   );
 }
+
 
 export default App;

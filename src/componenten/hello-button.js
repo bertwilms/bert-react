@@ -7,7 +7,7 @@ const HelloButton = (props) => {
     }
 
     return (
-        <button onClick={() => print2Console (props.name)}>Print 2 console </button>
+        <button onClick={() => print2Console (props.name)}>{props.label} </button>
     );
 };
 export default HelloButton;
